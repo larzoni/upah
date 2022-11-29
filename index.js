@@ -15,6 +15,9 @@ let btnClicked = false;
 let imgPokemontitle = document.getElementById("imgPokemontitle");
 const boxes = document.querySelectorAll('#imgPokemontitle, #imgPokemart, #imgPokerap, #imgVerdanturf, #imgBelltintower');
 
+//Now Playing
+const songPlaying = document.getElementById("isPlaying");
+
 //IMAGES
 var imageInactive = `../images/imageinactive.png`;
 var imageActive = `../images/audioactive.png`;
@@ -41,11 +44,21 @@ boxes.forEach(box => {
 
 //____________________FUNCTIONS
 
+//____SHOW WHATS PLAYING
+function isPlaying() {
+songPlaying.classList.add("active");
+}
+function notPlaying() {
+  songPlaying.classList.remove("active");
+}
+
 //________MUSIC
 imgPokemontitle.addEventListener("click", function() {
   const audio = document.getElementById("audioPokemontitle");
-  if (audio.paused) audio.play();
-  else {audio.pause(); audio.currentTime = 0; console.log(audio.currentTime)}; 
+  
+
+  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "<span>Now playing:</span>'Pokemon Title'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = " ";}; 
 }
 );
 
