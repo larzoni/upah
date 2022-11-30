@@ -243,7 +243,7 @@ body {
 }
 
 form {
-  width: 70vw;
+  width: 40vw;
   background-color: rgb(124, 152, 177);
   display: flex;
   align-self: center;
@@ -261,16 +261,22 @@ form {
 }
 
 .pokedex-container {
-  width: 80vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(135, 135, 135);
-  border: ridge 20px white;
+  background-image: url("images/pokedexbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-left: ridge 20px white;
+  border-right: ridge 20px white;
+  border-top: ridge 30px rgb(230, 221, 198);
+  border-bottom: ridge 30px rgb(200, 190, 165);
   border-radius: 30px;
 }
 
 .pokedex h3 {
+  color: rgb(0, 0, 0);
   font-size: 2rem;
   padding: 0.5rem 3rem;
   background-color: antiquewhite;
@@ -278,6 +284,7 @@ form {
   border-top: ridge white 10px;
   border-left: ridge white 10px;
   border-right: ridge white 10px;
+  text-transform: uppercase;
 }
 
 .information {
