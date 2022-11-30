@@ -104,8 +104,7 @@ function myFunction() {
 window.onscroll = function() {myFunction()};
 
 
-//_____
-// grab the things we need ----------
+//_____________POKEDEX
 const pokemonEl = document.querySelector(".pokedex-container");
 const formEl = document.querySelector("form");
 const inputEl = document.querySelector("input[type=text]");
@@ -117,6 +116,8 @@ formEl.addEventListener("submit", (e) => {
     getPokemon(inputEl.value);  
     
 });
+
+getPokemon(194);
 
 async function getPokemon(name = "pikachu") {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
