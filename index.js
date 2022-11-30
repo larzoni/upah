@@ -37,30 +37,25 @@ boxes.forEach(box => {
   }
 }) });
 
-
-
-
-
-
 //____________________FUNCTIONS
 
 //____SHOW WHATS PLAYING
 function isPlaying() {
-songPlaying.classList.add("active");
+// songPlaying.classList.add("active");
 }
 function notPlaying() {
-  songPlaying.classList.remove("active");
+  // songPlaying.classList.remove("active");
 }
 
 //________MUSIC
 imgPokemontitle.addEventListener("click", function() {
   const audio = document.getElementById("audioPokemontitle");
-  
 
-  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "<span>Now playing:</span>'Pokemon Title'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = " ";}; 
+  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokemon Title'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}; 
 }
 );
+
 
 imgPokemart.addEventListener("click", function() {
   const audio = document.getElementById("audioPokemart");
@@ -69,6 +64,7 @@ imgPokemart.addEventListener("click", function() {
 }
 );
 
+
 imgVerdanturf.addEventListener("click", function() {
   var audio = document.getElementById("audioVerdanturf");
   if (audio.paused) audio.play();
@@ -76,12 +72,14 @@ imgVerdanturf.addEventListener("click", function() {
 }
 );
 
+
 imgPokerap.addEventListener("click", function() {
   var audio = document.getElementById("audioPokerap");
   if (audio.paused) audio.play();
   else audio.pause();
 }
 );
+
 
 imgBelltintower.addEventListener("click", function() {
   var audio = document.getElementById("audioBelltintower");
@@ -111,3 +109,54 @@ function myFunction() {
     }}
 
 window.onscroll = function() {myFunction()};
+
+
+//_____
+// grab the things we need ----------
+const pokemonEl = document.querySelector(".pokedex-container");
+const formEl = document.querySelector("form");
+const inputEl = document.querySelector("input[type=text]");
+
+// listen for user events -------------
+formEl.addEventListener("submit", (e) => {
+    e.preventDefault();
+    pokemonEl.innerHTML = "";
+    getPokemon(inputEl.value);  
+    
+});
+
+async function getPokemon(name = "pikachu") {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+    const pokemon = await res.json();
+
+
+    pokemonEl.classList.add("pokedex");
+    pokemonEl.innerHTML = 
+    
+    `
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" width="250">
+    <h3>${pokemon.name}</h3>
+    <div class="information">
+        <div class="stats">
+        <h4>Stats</h4>
+        ${pokemon.stats.map((stat) => {
+         return `<p>${stat.stat.name}: ${stat.base_stat}</p>`;
+        })
+        .join("")}
+        </div>
+    
+        <div class="abilities">
+        <h4>Abilities</h4>
+        ${pokemon.abilities.map((ability) => {
+        return `<p>${ability.ability.name}</p>`;
+         })
+        .join("")}
+
+        </div>
+    
+    </div>
+`
+pokemonContainer.appendChild(pokemonEl);
+}
+
+getPokemon(194);

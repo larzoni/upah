@@ -108,7 +108,25 @@ body {
   padding: 1.5rem 3rem;
   text-decoration: none;
   font-size: 17px;
-  animation: neonize 3s ease-in-out infinite alternate;
+}
+
+#navbar a span {
+  text-decoration: springgreen underline;
+}
+
+#navbar span:hover {
+  animation: neonizegreen 1s ease-in-out infinite alternate;
+}
+
+@keyframes neonizegreen {
+  from {
+    text-shadow: 0 0 2px #fff, 0 0 8px #fff, 0 0 20px #34a645, 0 0 40px #34a645,
+      0 0 70px #34a645, 0 0 90px #34a645;
+  }
+  to {
+    text-shadow: 0 0 1px #fff, 0 0 4px #fff, 0 0 10px #34a645, 0 0 20px #34a645,
+      0 0 35px #34a645, 0 0 45px #34a645;
+  }
 }
 
 #navbar a:hover {
@@ -127,7 +145,7 @@ body {
 }
 
 #navbar a.active {
-  background-color: #090206;
+  background-color: #04150f;
   color: white;
 }
 
@@ -135,48 +153,30 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #54042d;
-  padding-bottom: 1000px;
+  background-color: #5a556b;
+  padding-bottom: 10rem;
 }
 
-.welcome h2 {
-  background-color: #34021c;
-  border-radius: 20px;
-  text-align: center;
-  text-decoration-line: overline;
-  font-size: 1rem;
-  color: #b3dadb;
-  padding: 3rem;
-  margin: 2rem 3rem;
-  border-style: groove;
-}
-
-.welcome h2 span {
+.player-title {
+  width: 50vw;
+  background-color: rgb(124, 152, 177);
   line-height: 2rem;
-  font-size: 1.4rem;
-  color: #81d2d4;
-  animation: neonizehover 0.5s ease-in-out infinite alternate;
-}
-#isplaying.active {
-  font-size: 1rem;
-  display: flex;
-  align-self: flex-start;
-  position: relative;
-  line-height: 1.6rem;
-  top: 1.2rem;
+  text-align: center;
   color: rgb(255, 255, 255);
-  height: auto;
-  align-self: left;
-  padding: 0.5rem 4rem;
+  font-size: 1rem;
+  padding: 1rem 1rem 2rem;
+  margin-bottom: -1.5rem;
+  margin-top: 4rem;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
   border-radius: 20px;
-  border-top: ridge white 20px;
-  border-left: ridge white 15px;
-  border-right: ridge white 15px;
-  background-color: #000000;
+  font-weight: normal;
+  animation: neonizehover 1s ease-in-out infinite alternate;
 }
 
-#isplaying span {
-  margin-right: 2rem;
+.player-title h4 {
+  animation: neonize 1s ease-in-out infinite alternate;
 }
 
 .content {
@@ -218,13 +218,91 @@ body {
 @keyframes rotation {
   from {
     transform: rotate(0deg);
-    width: 13rem;
   }
-  50% {
-    width: 13.4rem;
-  }
+
   to {
     transform: rotate(359deg);
-    width: 13.2rem;
   }
+}
+
+/*POKEDEX*/
+
+.pokedex-title {
+  background-color: #333;
+  color: rgb(255, 255, 255);
+  font-size: 2.4rem;
+  padding: 1rem 2rem 2rem;
+  margin-bottom: -1.5rem;
+  margin-top: 4rem;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
+  border-radius: 10px;
+  font-weight: normal;
+  animation: neonize 1s ease-in-out infinite alternate;
+}
+
+form {
+  width: 70vw;
+  background-color: rgb(124, 152, 177);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
+}
+
+#input {
+  width: 30vw;
+  padding: 0.5rem 1rem;
+}
+
+.pokedex-container {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(135, 135, 135);
+  border: ridge 20px white;
+  border-radius: 30px;
+}
+
+.pokedex h3 {
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
+}
+
+.information {
+  background-color: antiquewhite;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 1.4rem;
+  border-top: ridge wheat 20px;
+}
+
+.information h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: double underline;
+}
+
+.abilities p {
+  color: brown;
+}
+
+.stats p {
+  color: rgb(97, 46, 46);
 }
