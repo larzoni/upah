@@ -39,54 +39,45 @@ boxes.forEach(box => {
 
 //____________________FUNCTIONS
 
-//____SHOW WHATS PLAYING
-function isPlaying() {
-// songPlaying.classList.add("active");
-}
-function notPlaying() {
-  // songPlaying.classList.remove("active");
-}
-
 //________MUSIC
-imgPokemontitle.addEventListener("click", function() {
-  const audio = document.getElementById("audioPokemontitle");
 
-  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokemon Title'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}; 
+imgPokemontitle.addEventListener("click", function() {
+  let audio = document.getElementById("audioPokemontitle");
+
+  if (audio.paused) {audio.play(); songPlaying.innerHTML = "Now playing: 'Pokemon Title'";}
+  else {audio.pause(); audio.currentTime = 0; songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
-
 
 imgPokemart.addEventListener("click", function() {
-  const audio = document.getElementById("audioPokemart");
+  let audio = document.getElementById("audioPokemart");
 
-  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokemart'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
+  if (audio.paused) {audio.play(); songPlaying.innerHTML = "Now playing: 'Pokemart'";}
+  else {audio.pause(); audio.currentTime = 0; songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
-
-
-imgVerdanturf.addEventListener("click", function() {
-  var audio = document.getElementById("audioVerdanturf");
-
-  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Verdan turf'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
-}
-);
-
 
 imgPokerap.addEventListener("click", function() {
-  var audio = document.getElementById("audioPokerap");
- if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokerap'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
+  let audio = document.getElementById("audioPokerap");
+
+  if (audio.paused) {audio.play(); songPlaying.innerHTML = "Now playing: 'Pokerap'";}
+  else {audio.pause(); audio.currentTime = 0; songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
+imgVerdanturf.addEventListener("click", function() {
+  let audio = document.getElementById("audioVerdanturf");
+
+  if (audio.paused) {audio.play(); songPlaying.innerHTML = "Now playing: 'Verdan turf'";}
+  else {audio.pause(); audio.currentTime = 0; songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
+}
+);
 
 imgBelltintower.addEventListener("click", function() {
-  var audio = document.getElementById("audioBelltintower");
-  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Belltin Tower'";}
-  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
+  let audio = document.getElementById("audioBelltintower");
+
+  if (audio.paused) {audio.play(); songPlaying.innerHTML = "Now playing: 'Bell/Tin Tower'";}
+  else {audio.pause(); audio.currentTime = 0; songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
