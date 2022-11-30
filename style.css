@@ -265,7 +265,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("images/pokedexbackground.jpg");
+  background-image: url("/images/pokedexbackground.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-left: ridge 20px white;

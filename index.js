@@ -59,32 +59,34 @@ imgPokemontitle.addEventListener("click", function() {
 
 imgPokemart.addEventListener("click", function() {
   const audio = document.getElementById("audioPokemart");
-  if (audio.paused) audio.play();
-  else {audio.pause(); audio.currentTime = 0; console.log(audio.currentTime)}; 
+
+  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokemart'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
 
 imgVerdanturf.addEventListener("click", function() {
   var audio = document.getElementById("audioVerdanturf");
-  if (audio.paused) audio.play();
-  else audio.pause();
+
+  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Verdan turf'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
 
 imgPokerap.addEventListener("click", function() {
   var audio = document.getElementById("audioPokerap");
-  if (audio.paused) audio.play();
-  else audio.pause();
+ if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Pokerap'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
 
 imgBelltintower.addEventListener("click", function() {
   var audio = document.getElementById("audioBelltintower");
-  if (audio.paused) audio.play();
-  else audio.pause();
+  if (audio.paused) {audio.play(); isPlaying(); songPlaying.innerHTML = "Now playing: 'Belltin Tower'";}
+  else {audio.pause(); audio.currentTime = 0; notPlaying(); songPlaying.innerHTML = "<h4>LO-FI MUSIC by UPAH</h4></h4>";}
 }
 );
 
