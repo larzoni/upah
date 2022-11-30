@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P";
+}
+
+.pokedex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  flex-direction: column;
+  background-color: black;
+}
+
+form {
+  background-color: rgb(124, 152, 177);
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border-radius: 20px;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
+}
+
+#input {
+  padding: 0.5rem 1rem;
+}
+
+.pokedex-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20rem;
+  background-color: rgb(135, 135, 135);
+  border: ridge 20px white;
+  border-radius: 30px;
+}
+
+.pokedex h3 {
+  font-size: 2rem;
+  padding: 0.5rem 3rem;
+  background-color: antiquewhite;
+  border-radius: 10px;
+  border-top: ridge white 10px;
+  border-left: ridge white 10px;
+  border-right: ridge white 10px;
+}
+
+.information {
+  background-color: antiquewhite;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  line-height: 1.4rem;
+  border-top: ridge wheat 20px;
+}
+
+.information h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-decoration: double underline;
+}
+
+.abilities p {
+  color: brown;
+}
+
+.stats p {
+  color: rgb(97, 46, 46);
+}
