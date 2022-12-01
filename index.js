@@ -19,8 +19,8 @@ const boxes = document.querySelectorAll('#imgPokemontitle, #imgPokemart, #imgPok
 const songPlaying = document.getElementById("isPlaying");
 
 //IMAGES
-var imageInactive = `../images/imageinactive.png`;
-var imageActive = `../images/audioactive.png`;
+const imageInactive = `../images/imageinactive.png`;
+const imageActive = `../images/audioactive.png`;
 let isImageActive = false
 
 
@@ -32,7 +32,7 @@ boxes.forEach(box => {
       box.setAttribute('style', 'animation: rotation 1s infinite linear;');
   } else {
       box.src = imageInactive;
-      isImageActive = false
+      isImageActive = false;
       box.setAttribute('style', 'background-color: none');
   }
 }) });
@@ -117,16 +117,12 @@ formEl.addEventListener("submit", (e) => {
     
 });
 
-getPokemon(194);
-
 async function getPokemon(name = "pikachu") {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const pokemon = await res.json();
 
-
     pokemonEl.classList.add("pokedex");
     pokemonEl.innerHTML = 
-    
     `
     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" width="250">
     <h3>${pokemon.name}</h3>
